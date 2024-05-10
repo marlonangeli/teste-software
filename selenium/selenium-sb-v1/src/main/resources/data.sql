@@ -5,7 +5,9 @@ INSERT INTO `users` (`user_id`, `email`, `enabled`, `username`, `role`, `passwor
 
 INSERT INTO `leilao` (`id`, `data_abertura`, `nome`, `valor_inicial`, `usuario_user_id`) VALUES
 (1,	'2020-08-03',	'Tablet Xpto 3',	5.00,	1),
-(2,	'2020-08-03',	'Computador Z3',	500.00,	3);
+(2,	'2020-08-03',	'Computador Z3',	500.00,	3),
+(3,	'2020-08-03',	'Cigarro do paraguai',	300.00,	2),
+(4,	'2020-08-03',	'Sobjak eu não sei a senha!!',	1000.00,	2);
 
 INSERT INTO `lance` (`id`, `data`, `valor`, `leilao_id`, `usuario_user_id`) VALUES
 (1,	'2020-08-04',	10.00,	1,	3),
