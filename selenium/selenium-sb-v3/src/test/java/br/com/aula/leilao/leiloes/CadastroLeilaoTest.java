@@ -3,6 +3,7 @@ package br.com.aula.leilao.leiloes;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,11 +37,18 @@ public class CadastroLeilaoTest {
 
         cadastroLeilaoPage.preencherFormulario(nome, valor, hoje);
         cadastroLeilaoPage.submeterFormulario();
+
+        // Assert
+        Assert.assertTrue(leiloesPage.isLeilaoPage());
+        Assert.assertTrue(cadastroLeilaoPage.isLeilaoCadastrado(nome, valor, hoje));
     }
 
     @Test
-    void naoDeveriaCadastrarComCamposInvalidos() {
+    void naoDeveriaCadastrarComCamposInvalidos(){
+        cadastroLeilaoPage.submeterFormulario();
 
+        // Assert
+        Assert.assertTrue(cadastroLeilaoPage.contemErrosValidacao());
     }
 
 }

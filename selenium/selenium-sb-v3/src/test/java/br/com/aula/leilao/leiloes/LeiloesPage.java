@@ -19,4 +19,8 @@ public class LeiloesPage {
         browser.navigate().to(CadastroLeilaoPage.URL_CADASTRO);
         return new CadastroLeilaoPage(browser);
     }
+
+    public boolean isLeilaoPage() {
+        return browser.getCurrentUrl().equals(URL_LEILOES);
+    }
 }
